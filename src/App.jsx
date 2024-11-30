@@ -9,7 +9,7 @@ import axios from "axios"
 const App = () => {
 
   const [weather, setWeather] = useState(null)
-  const [city, setCity] = useState("Lagos")
+  const [city, setCity] = useState("")
   const [error, setError] = useState("")
   const [errors, setErrors] = useState("")
   const [location, setLocation] = useState(null)
