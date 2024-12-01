@@ -8,7 +8,7 @@ const Forecast = ({weather}) => {
         return dayShort
     }
   return (
-        <ul className="flex gap-4">
+        <ul className="grid grid-cols-4 md:flex gap-4">
             {infos.map(info => 
                 <ForecastCard key={info.date} info={info} dayOfWeek={dayOfWeek} />
             )}

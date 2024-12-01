@@ -5,7 +5,7 @@ import sunny from '../assets/sunny.png'
 import { useEffect, useRef, useState } from "react";
 import Search from "./Search";
 
-const Weather = ({weather, setCity}) => {
+const Weather = ({weather, setCity, setChange, change}) => {
     const [text, setText] = useState("")
     const [searchResult, setSearchResult] = useState(null)
     const [showResults, setShowResults] = useState(false)
@@ -57,14 +57,15 @@ const Weather = ({weather, setCity}) => {
     }, [])
   return (
     <div className="grid place-content-center">
-        <div className="w-[300px] px-8 py-8 bg-white rounded-3xl">
-        <form className="flex relative w-4/5">
+        <div className="md:w-[300px] w-[350px] mt-12 md:mt-0 px-8 py-8 bg-white rounded-3xl">
+        <form className="flex relative w-4/5 justify-center">
             <IoSearchSharp className="absolute inset-2" />
             <input type="text" value={text} onChange={(e) => {
                 setText(e.target.value)
                 setShowResults(true)
-            }} placeholder="Search for places ..." onKeyDown={handleKeyDown} className="rounded-lg focus:outline-none py-1 ps-10 border mb-3" />
-            <PiMapPinAreaThin className="absolute -right-14 top-2" />
+            }} placeholder="Search for places ..." 
+            onKeyDown={handleKeyDown} className="rounded-lg focus:outline-none py-1 ps-12 border mb-3" />
+            <PiMapPinAreaThin onClick={() => setChange(!change)} className="absolute -right-14 top-2 cursor-pointer" />
                 {
                     searchResult?.length && showResults ?
                     (

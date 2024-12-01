@@ -10,7 +10,7 @@ const Highlight = ({weather}) => {
   return (
     <div className="mt-6">
         <h2 className="mb-4 font-medium text-2xl">Today's Highlights</h2>
-        <div className="grid grid-rows-2 grid-cols-3 gap-4">
+        <div className="grid grid-rows-1 md:grid-rows-2 md:grid-cols-3 gap-4">
             <Uv weather={weather} />
             <Wind weather={weather} />
             <Sun weather={weather} />

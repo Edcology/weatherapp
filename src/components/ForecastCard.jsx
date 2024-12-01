@@ -1,8 +1,6 @@
-
-
 const ForecastCard = ({info, dayOfWeek}) => {
   return (
-        <li className="p-4 bg-white rounded-xl">
+        <li className="p-4 bg-white rounded-xl max-w-[200px] grid justify-center">
             <p className="text-center">{dayOfWeek(info.date)}</p>
             <img src={info.day?.condition?.icon} alt="weather icon" />
             <div className="flex gap-2 font-medium text-xs">

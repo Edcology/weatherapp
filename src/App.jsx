@@ -13,6 +13,7 @@ const App = () => {
   const [error, setError] = useState("")
   const [errors, setErrors] = useState("")
   const [location, setLocation] = useState(null)
+  const [change, setChange] = useState(false)
   
 
   useEffect(() => {
@@ -71,7 +72,7 @@ const App = () => {
   
     }
     getCity()
-  }, [location])
+  }, [location, change])
 
 
   if (!weather || !weather.current) {  // Check for null or undefined weather.current
@@ -80,8 +81,8 @@ const App = () => {
   
  
   return (
-    <main className="px-6 bg-gray-300 flex gap-4">
-      <Weather weather={weather} setCity={setCity} />
+    <main className="px-6 bg-gray-300 flex flex-col md:flex-row gap-4">
+      <Weather weather={weather} setCity={setCity} setChange={setChange} change={change} />
       <Dashboard weather={weather} />
     </main>
   )
