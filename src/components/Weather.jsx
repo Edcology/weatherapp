@@ -69,7 +69,7 @@ const Weather = ({weather, setCity, setChange, change}) => {
                 {
                     searchResult?.length && showResults ?
                     (
-                        <ul ref={searchBoxRef} className="absolute bg-white top-9 w-full text-xs backdrop-blur-md border px-6 py-2 divide-y divide-gray-300">
+                        <ul ref={searchBoxRef} className="absolute bg-white top-9 w-full text-sm backdrop-blur-md border px-6 py-2 divide-y divide-gray-300">
                             {searchResult.map(res =>
                                 <li onClick={handleSubmit} key={res.id} className="mb-1 cursor-pointer">{res.name}</li>
                             )}
